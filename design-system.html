@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System — L'Univers du Petit Bois</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F9F5EC; --cream-deep:#F0E8D8;
+    --walnut:#8B5E34; --walnut-deep:#6E4626;
+    --pine:#25334A; --pine-soft:#3A4A63;
+    --rose:#B9C6DC; --sage:#8A9A7D;
+    --ink:#2A2621; --ink-soft:#6b6357;
+    --radius-sm:10px; --radius-md:16px; --radius-lg:20px; --radius-xl:28px;
+    --space-1:8px; --space-2:16px; --space-3:24px; --space-4:32px; --space-5:48px; --space-6:64px; --space-7:96px;
+  }
+  *{box-sizing:border-box;}
+  body{ background:var(--cream); color:var(--ink); font-family:'Karla',sans-serif; margin:0; padding:0 0 100px; line-height:1.6;}
+  h1,h2,h3,.display{ font-family:'Cormorant', serif; color:var(--pine); font-weight:500;}
+  .wrap{ max-width:1000px; margin:0 auto; padding:0 32px;}
+  header{ background:var(--pine); color:var(--cream); padding:56px 32px; text-align:center;}
+  header img{ width:64px; height:64px; border-radius:50%; margin-bottom:16px;}
+  header h1{ color:var(--cream); font-size:2rem; margin-bottom:8px;}
+  header p{ color:rgba(249,245,236,0.7);}
+  section{ padding:56px 0; border-bottom:1px solid rgba(38,51,43,0.08);}
+  section h2{ font-size:1.5rem; margin-bottom:8px;}
+  .intro{ color:var(--ink-soft); margin-bottom:32px; max-width:640px;}
+  code{ background:var(--cream-deep); padding:2px 7px; border-radius:6px; font-size:0.85em;}
+
+  .swatch-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:18px;}
+  .swatch{ border-radius:var(--radius-md); overflow:hidden; border:1px solid rgba(38,51,43,0.08);}
+  .swatch .fill{ height:80px;}
+  .swatch .label{ padding:10px 14px; background:#fff; font-size:0.82rem;}
+  .swatch .label b{ display:block; font-family:'Cormorant',serif; font-size:0.9rem; color:var(--pine);}
+
+  .type-sample{ margin-bottom:28px;}
+  .type-sample span{ display:block; font-size:0.78rem; color:var(--ink-soft); margin-bottom:6px; font-family:'Karla',sans-serif;}
+
+  .btn-row{ display:flex; gap:16px; flex-wrap:wrap; align-items:center;}
+  .btn-primary,.btn-secondary{ padding:14px 28px; border-radius:999px; font-size:0.92rem; font-weight:500; display:inline-block; text-decoration:none;}
+  .btn-primary{ background:var(--pine); color:var(--cream);}
+  .btn-secondary{ background:transparent; color:var(--pine); border:1.4px solid rgba(38,51,43,0.22);}
+
+  .radius-row,.shadow-row,.space-row{ display:flex; gap:20px; flex-wrap:wrap; align-items:flex-end;}
+  .radius-box{ width:90px; height:90px; background:var(--cream-deep); border:1px solid rgba(38,51,43,0.1); display:flex; align-items:flex-end; justify-content:center; font-size:0.72rem; color:var(--ink-soft); padding-bottom:6px;}
+  .shadow-box{ width:120px; height:90px; background:#fff; border-radius:var(--radius-md); display:flex; align-items:flex-end; justify-content:center; font-size:0.72rem; color:var(--ink-soft); padding-bottom:8px;}
+  .space-box{ background:var(--walnut); }
+  .space-item{ display:flex; flex-direction:column; align-items:center; gap:8px; font-size:0.72rem; color:var(--ink-soft);}
+
+  .icon-row{ display:flex; gap:28px; flex-wrap:wrap;}
+  .icon-item{ display:flex; flex-direction:column; align-items:center; gap:8px; font-size:0.78rem; color:var(--ink-soft);}
+  .icon-item svg{ color:var(--walnut);}
+
+  .motion-note{ background:var(--cream-deep); border-radius:var(--radius-md); padding:20px 24px; font-size:0.9rem;}
+  ul.rules{ padding-left:20px; color:var(--ink-soft);}
+  ul.rules li{ margin-bottom:8px;}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Logo L'Univers du Petit Bois">
+  <h1>Design System</h1>
+  <p>L'Univers du Petit Bois — guide de style pour garder une identité cohérente à chaque nouvelle page</p>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <h2>Palette officielle</h2>
+    <p class="intro">Inspirée du logo (bleu marine &amp; blanc), complétée par des tons chaleureux qui évoquent le bois et la nature. 5 couleurs de marque + 2 neutres de texte.</p>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="fill" style="background:var(--pine)"></div><div class="label"><b>Bleu marine</b>--pine · #25334A<br>Couleur de marque principale, textes de titre, fonds sombres</div></div>
+      <div class="swatch"><div class="fill" style="background:var(--walnut)"></div><div class="label"><b>Bois noyer</b>--walnut · #8B5E34<br>Boutons, accents, éléments d'action</div></div>
+      <div class="swatch"><div class="fill" style="background:var(--walnut-deep)"></div><div class="label"><b>Bois foncé</b>--walnut-deep · #6E4626<br>Survol des boutons, prix</div></div>
+      <div class="swatch"><div class="fill" style="background:var(--sage)"></div><div class="label"><b>Sauge</b>--sage · #8A9A7D<br>Étiquettes de catégorie, détails discrets</div></div>
+      <div class="swatch"><div class="fill" style="background:var(--rose)"></div><div class="label"><b>Bleu pâle</b>--rose · #B9C6DC<br>Accents sur fond sombre</div></div>
+      <div class="swatch"><div class="fill" style="background:var(--cream)"></div><div class="label"><b>Crème</b>--cream · #F9F5EC<br>Fond principal du site</div></div>
+      <div class="swatch"><div class="fill" style="background:var(--cream-deep)"></div><div class="label"><b>Crème foncée</b>--cream-deep · #F0E8D8<br>Fonds de section alternés</div></div>
+      <div class="swatch"><div class="fill" style="background:var(--ink)"></div><div class="label"><b>Encre</b>--ink · #2A2621<br>Texte principal</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Typographie</h2>
+    <p class="intro">Deux polices Google Fonts, gratuites et faciles à installer sur n'importe quel projet : <code>Cormorant</code> pour les titres (fin, raffiné, haut de gamme), <code>Karla</code> pour le texte courant (lisible, discret).</p>
+    <div class="type-sample"><span>Titre principal — Cormorant 500, clamp(2.2rem, 3.6vw, 3.4rem)</span><h1 style="margin:0;">Des souvenirs uniques</h1></div>
+    <div class="type-sample"><span>Titre de section — Cormorant 500, ~2rem</span><h2 style="margin:0;">Nos univers</h2></div>
+    <div class="type-sample"><span>Sous-titre / nom de produit — Cormorant 500, ~1.1rem</span><h3 style="margin:0; font-weight:500;">Cadre naissance personnalisé</h3></div>
+    <div class="type-sample"><span>Texte courant — Karla 400, ~1rem</span><p style="margin:0; max-width:480px;">Chaque création est imaginée, gravée et personnalisée avec soin dans mon atelier.</p></div>
+    <div class="type-sample"><span>Étiquette / eyebrow — Karla 700, 0.75rem, majuscules, espacée</span><div style="text-transform:uppercase; letter-spacing:0.16em; font-size:0.74rem; font-weight:700; color:var(--walnut-deep);">Notre univers</div></div>
+  </section>
+
+  <section>
+    <h2>Boutons</h2>
+    <p class="intro">Toujours arrondis en pilule (<code>border-radius:999px</code>), deux niveaux : plein pour l'action principale, contour pour l'action secondaire.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="#">Voir les créations</a>
+      <a class="btn-secondary" href="#">Personnaliser ma création</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Coins arrondis</h2>
+    <p class="intro">4 niveaux, du plus discret (petits éléments) au plus prononcé (grandes cartes).</p>
+    <div class="radius-row">
+      <div class="radius-box" style="border-radius:var(--radius-sm);">sm · 10px</div>
+      <div class="radius-box" style="border-radius:var(--radius-md);">md · 16px</div>
+      <div class="radius-box" style="border-radius:var(--radius-lg);">lg · 20px</div>
+      <div class="radius-box" style="border-radius:var(--radius-xl);">xl · 28px</div>
+      <div class="radius-box" style="border-radius:999px; width:90px;">pilule</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ombres</h2>
+    <p class="intro">Douces et diffuses — jamais dures. Utilisées au survol des cartes pour donner une impression de légèreté.</p>
+    <div class="shadow-row">
+      <div class="shadow-box" style="box-shadow:0 8px 20px rgba(38,51,43,0.08);">légère</div>
+      <div class="shadow-box" style="box-shadow:0 18px 34px rgba(38,51,43,0.1);">moyenne</div>
+      <div class="shadow-box" style="box-shadow:0 30px 60px rgba(38,51,43,0.16);">prononcée</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Espacements</h2>
+    <p class="intro">Échelle en escalier — toujours utiliser ces valeurs plutôt que des chiffres arbitraires.</p>
+    <div class="space-row">
+      <div class="space-item"><div class="space-box" style="width:8px; height:8px;"></div>8px</div>
+      <div class="space-item"><div class="space-box" style="width:16px; height:16px;"></div>16px</div>
+      <div class="space-item"><div class="space-box" style="width:24px; height:24px;"></div>24px</div>
+      <div class="space-item"><div class="space-box" style="width:32px; height:32px;"></div>32px</div>
+      <div class="space-item"><div class="space-box" style="width:48px; height:48px;"></div>48px</div>
+      <div class="space-item"><div class="space-box" style="width:64px; height:64px;"></div>64px</div>
+      <div class="space-item"><div class="space-box" style="width:96px; height:64px;"></div>96px</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Icônes</h2>
+    <p class="intro">Traits fins (1.4–1.6px), sans remplissage, dans le ton bois (<code>--walnut</code>) — jamais de style "emoji plat" pour les icônes fonctionnelles (livraison, personnalisation...). Les emojis restent réservés aux petites touches ponctuelles (🌿🎁📦).</p>
+    <div class="icon-row">
+      <div class="icon-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5z"/></svg>Qualité</div>
+      <div class="icon-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h16M8 20V10l4-6 4 6v10"/></svg>Personnalisation</div>
+      <div class="icon-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>Livraison</div>
+      <div class="icon-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg>Paiement</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Animations</h2>
+    <div class="motion-note">
+      <ul class="rules">
+        <li><b>Apparition au scroll</b> : légère montée + fondu (translateY 20px → 0, opacité 0 → 1), 0.6–1s, jamais plus.</li>
+        <li><b>Survol des cartes</b> : translation vers le haut de 5-6px + ombre qui s'intensifie, transition 0.3s.</li>
+        <li><b>Survol des photos de catégorie</b> : léger zoom (scale 1.08), transition 0.5s.</li>
+        <li><b>Boutons</b> : translation vers le haut de 2px au survol, transition 0.2s.</li>
+        <li>Toujours respecter <code>prefers-reduced-motion</code> : couper les animations pour les visiteurs qui le demandent.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="border-bottom:none;">
+    <h2>Comment utiliser ce guide</h2>
+    <p class="intro">Ce fichier n'est pas qu'une démo visuelle : les variables CSS (<code>:root</code>) en haut du fichier sont exactement celles utilisées sur le site. Pour garder la cohérence en ajoutant une page :</p>
+    <ul class="rules">
+      <li>Toujours partir de ces couleurs, jamais de nouvelles teintes inventées à la volée</li>
+      <li>Toujours utiliser <code>Cormorant</code> pour les titres, <code>Karla</code> pour le texte</li>
+      <li>Réutiliser les rayons, ombres et espacements de cette page plutôt que des valeurs arbitraires</li>
+      <li>Un nouveau développeur (humain ou IA) peut copier ces variables telles quelles dans n'importe quelle nouvelle page du site</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>
