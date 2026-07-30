@@ -197,6 +197,12 @@
   const els = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } }); }, {threshold:0.12});
   els.forEach(el=>io.observe(el));
+  const burgerBtn = document.querySelector('.burger');
+  const navLinksEl = document.querySelector('.nav-links');
+  if (burgerBtn && navLinksEl) {
+    burgerBtn.addEventListener('click', () => navLinksEl.classList.toggle('open'));
+    navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinksEl.classList.remove('open')));
+  }
 </script>
 </body>
 </html>
